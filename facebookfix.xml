@@ -7,11 +7,11 @@
 -->
 <extension type="plugin" version="3.0" group="system" method="upgrade">
 	<name>facebookfix</name>
-	<author></author>
+	<author>Dimitris Grammatiko</author>
 	<creationDate>May 2014</creationDate>
 	<copyright>Copyright (c) 2014 XS_NRG. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<authorEmail></authorEmail>
+	<authorEmail>d.grammatiko@gmail.com</authorEmail>
 	<authorUrl></authorUrl>
 	<version>1.0.0</version>
 	<description>
