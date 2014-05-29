@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @copyright	Copyright (c) 2014 XS_NRG. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+-->
+<extension type="plugin" version="3.0" group="system" method="upgrade">
+	<name>facebookfix</name>
+	<author></author>
+	<creationDate>May 2014</creationDate>
+	<copyright>Copyright (c) 2014 XS_NRG. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.0.0</version>
+	<description>
+	<![CDATA[
+		Enable this plugin to fix the error on posting articles or other links to facebook.
+	]]>
+	</description>
+
+	<files>
+		<filename plugin="facebookfix">facebookfix.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>
