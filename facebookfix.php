@@ -33,7 +33,23 @@ class plgsystemfacebookfix extends JPlugin {
 
 		$app = JFactory::getApplication();
 
-		if (($app->getCfg('gzip') == 1) && ($_SERVER['HTTP_USER_AGENT'] == 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'))
+		if ( $app->isAdmin() )
+		{
+			return;
+		}
+		
+		$isfbcrawl = 0;
+		
+		if (isset($_SERVER['HTTP_USER_AGENT']))
+		{
+			$pattern = '/^facebookexternalhit/';
+			if (preg_match($pattern, $_SERVER['HTTP_USER_AGENT']))
+			{
+				$isfbcrawl = 1;
+			}
+		//$_SERVER['HTTP_USER_AGENT'] = 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)')
+		}
+		if (($app->getCfg('gzip') == 1) && ($isfbcrawl == 1))
 		{
 			JFactory::getConfig()->set('gzip', 0);
 		}
