@@ -24,11 +24,10 @@ class plgsystemfacebookfix extends JPlugin {
 	 * @param	array $config
 	 */
 	function __construct(&$subject, $config = array()) {
-		// call parent constructor
 		parent::__construct($subject, $config);
 	}
 	
-		function onAfterRoute()
+	function onAfterRoute()
 	{
 
 		$app = JFactory::getApplication();
@@ -37,23 +36,24 @@ class plgsystemfacebookfix extends JPlugin {
 		{
 			return;
 		}
-		
+
 		$isfbcrawl = 0;
 		
 		if (isset($_SERVER['HTTP_USER_AGENT']))
 		{
+		/* Facebook User Agent
+		 * facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+		 */
 			$pattern = '/^facebookexternalhit/';
 			if (preg_match($pattern, $_SERVER['HTTP_USER_AGENT']))
 			{
 				$isfbcrawl = 1;
 			}
-		//$_SERVER['HTTP_USER_AGENT'] = 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)')
-		}
-		if (($app->getCfg('gzip') == 1) && ($isfbcrawl == 1))
-		{
-			JFactory::getConfig()->set('gzip', 0);
 		}
 
+		if (((int)$app->get('gzip') === 1) && ($isfbcrawl === 1))
+		{
+			$app->set('gzip', 0);
+		}
 	}
-	
 }
