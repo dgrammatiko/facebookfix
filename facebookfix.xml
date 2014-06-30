@@ -6,14 +6,14 @@
  */
 -->
 <extension type="plugin" version="3.0" group="system" method="upgrade">
-	<name>facebookfix</name>
+	<name>Facebook fix</name>
 	<author>Dimitris Grammatiko</author>
 	<creationDate>May 2014</creationDate>
 	<copyright>Copyright (c) 2014 XS_NRG. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>d.grammatiko@gmail.com</authorEmail>
 	<authorUrl></authorUrl>
-	<version>1.0.1</version>
+	<version>1.0.0</version>
 	<description>
 	<![CDATA[
 		Enable this plugin to fix the error on posting articles or other links to facebook.

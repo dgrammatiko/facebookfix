@@ -43,8 +43,12 @@ class plgsystemfacebookfix extends JPlugin {
 		{
 		/* Facebook User Agent
 		 * facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+		 * LinkedInBot/1.0 (compatible; Mozilla/5.0; Jakarta Commons-HttpClient/3.1 +http://www.linkedin.com)
 		 */
-			$pattern = '/^facebookexternalhit/';
+			$pattern =	"/facebookexternalhit|
+						LinkedInBot
+						/x";
+
 			if (preg_match($pattern, $_SERVER['HTTP_USER_AGENT']))
 			{
 				$isfbcrawl = 1;
