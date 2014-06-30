@@ -41,11 +41,11 @@ class plgsystemfacebookfix extends JPlugin {
 		
 		if (isset($_SERVER['HTTP_USER_AGENT']))
 		{
-		/* Facebook User Agent
-		 * facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
-		 */
-			$pattern = '/^facebookexternalhit/';
-			if (preg_match($pattern, $_SERVER['HTTP_USER_AGENT']))
+			$pattern = array(
+				'/^facebookexternalhit/',	// Facebook User Agent :: facebookexternalhit/1.1
+				'/^LinkedInBot/',		// LinkedIn User Agent :: LinkedInBot/1.0
+				);
+			if (in_array($_SERVER['HTTP_USER_AGENT'], $pattern))
 			{
 				$isfbcrawl = 1;
 			}
